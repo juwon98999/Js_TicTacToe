@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="master.css" rel="stylesheet"/>
+        <script src='GameManager.js'></script>
+        <script src='maptile.js'></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+        <title>Final Exam</title>
+    </head>
+    <body>
+        <div id="Intro">
+            <button id="gamebtn" v-if="!gameIsRunning" v-on:click="startGame">START NEW GAME</button>
+        </div>
+        
+        <div id="TTT_app">
+            <div id="game-map">
+                <div v-for = "(maptile, i) in GameMap"
+                    v-on:click = "oxinput"                 
+                    class="game-tile">
+                    {{maptile.value}}
+                </div>
+            </div>
+
+            <div id="gameinfo">
+     
+                {{ infoMessage }}
+    
+            </div>
+        </div>
+
+
+
+        <script src = "main.js"></script>
+    </body>
+</html>
